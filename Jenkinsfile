@@ -6,7 +6,7 @@ pipeline {
                 docker { image 'composer' }
             }
             steps {
-                install
+                sh 'install'
             }
         }
   }
