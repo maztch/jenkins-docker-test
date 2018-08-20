@@ -1,12 +1,13 @@
 pipeline {
-  agent {
-    docker 'php:7.2-fpm'
-  }
+  agent any
   stages {
-    stage('build') {
-      steps {
-        sh 'php --version'
-      }
-    }
+    stage('Composer') {
+            agent {
+                docker { image 'composer' }
+            }
+            steps {
+                install
+            }
+        }
   }
 }
