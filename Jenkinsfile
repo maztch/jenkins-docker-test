@@ -23,7 +23,7 @@ pipeline {
       }
     }
     stage('deploy develop branch') {
-        when { branch 'develop' } #condition on branch name
+        when { branch 'develop' } // condition on branch name
         steps {
             script {
                 echo "Deploying Develop Branch, execute ansible for develop"
@@ -31,18 +31,18 @@ pipeline {
         }
     }
     stage('deploy master branch') {
-        when { branch 'master' } #same here for master branch
+        when { branch 'master' } // same here for master branch
         steps {
             script {
                 echo "Deploying Master Branch, execute ansible for develop"
             }
         }
     }
-    stage('notify'){ #when all is done, send a slack notification
+    stage('notify'){ // when all is done, send a slack notification
         steps {
             script {
-                #notify to slack
-                // slackSend(message: getChangeString(), channel: '#jenkins', color: 'good', failOnError: true, teamDomain: 'yourteam', token: 'yourtoken')
+                // notify to slack
+                // slackSend(message: getChangeString(), channel: '// jenkins', color: 'good', failOnError: true, teamDomain: 'yourteam', token: 'yourtoken')
             }
         }
     }
