@@ -1,12 +1,12 @@
 pipeline {
-  #This means that the script will run on your CI machine, and will use its environment as is.
+  // This means that the script will run on your CI machine, and will use its environment as is.
   agent any
   stages {
-    #Each stage gets a graphical representation on the blue ocean UI
+    // Each stage gets a graphical representation on the blue ocean UI
     stage('Build') {
       steps {
         script{
-			#Putting here all the steps necessary to realize a local build
+			// Putting here all the steps necessary to realize a local build
             echo "Starting Build, triggered by $BRANCH_NAME";
             echo "Building ${env.BUILD_ID}";
             sh 'composer install';
@@ -42,7 +42,7 @@ pipeline {
         steps {
             script {
                 #notify to slack
-                #slackSend(message: getChangeString(), channel: '#jenkins', color: 'good', failOnError: true, teamDomain: 'yourteam', token: 'yourtoken')
+                // slackSend(message: getChangeString(), channel: '#jenkins', color: 'good', failOnError: true, teamDomain: 'yourteam', token: 'yourtoken')
             }
         }
     }
