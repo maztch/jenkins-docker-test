@@ -15,7 +15,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Starting Unit Tests'
-        sh 'phpunit';
+        sh './vendor/bin/phpunit';
       }
     }
     stage('deploy develop branch') {
