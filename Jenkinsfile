@@ -35,6 +35,7 @@ pipeline {
     }
     stage('notify'){ // when all is done, send a slack notification
         steps {
+                echo "Notigy"
                 // notify to slack
                 // slackSend(message: getChangeString(), channel: '// jenkins', color: 'good', failOnError: true, teamDomain: 'yourteam', token: 'yourtoken')
         }
