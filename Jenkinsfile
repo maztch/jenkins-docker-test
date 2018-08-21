@@ -10,8 +10,6 @@ pipeline {
             echo "Building ${env.BUILD_ID}";
             sh 'composer install';
             sh 'npm install';
-            sh 'node_modules/bower/bin/bower install'
-            sh 'node_modules/gulp/bin/gulp.js build'
       }
     }
     stage('Test') {
